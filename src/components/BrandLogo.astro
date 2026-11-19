@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import logoAzul from '../assets/rotec-azul-sin-fondo.svg';
+import logoBlanco from '../assets/rotec-blanco-sin-fondo.svg';
+
+interface Props {
+	variant?: 'dark' | 'light';
+}
+
+const { variant = 'dark' } = Astro.props;
+
+const logoByVariant = {
+	dark: logoAzul,
+	light: logoBlanco,
+};
+---
+
+<a href="/" class="brand" aria-label="ROTEC Technologies, ir al inicio">
+	<Image src={logoByVariant[variant]} alt="ROTEC Technologies" class="brand-logo" loading="eager" />
+</a>
+
+<style>
+	.brand {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.brand-logo {
+		display: block;
+		width: auto;
+		height: clamp(64px, 12vw, 96px);
+	}
+</style>

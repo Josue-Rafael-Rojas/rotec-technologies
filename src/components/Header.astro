@@ -1,0 +1,26 @@
+---
+import BrandLogo from './BrandLogo.astro';
+---
+
+<header class="site-header">
+	<div class="container header-inner">
+		<BrandLogo />
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		background: rgb(253 253 253 / 0.88);
+		backdrop-filter: saturate(180%) blur(12px);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.header-inner {
+		display: flex;
+		align-items: center;
+		height: var(--header-height);
+	}
+</style>
